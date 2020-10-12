@@ -4,14 +4,25 @@
   "description": "verkefni 6 í vefforritun",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "lint-css": "stylelint styles.css",
+    "lint-scss": "stylelint styles.scss --syntax scss",
+    "lint": "stylelint styles.scss ./**/*.scss",
+    "dev": "concurrently npm:sass npm:browser-sync",
+    "sass-watch": "node-sass --source-map-embed --watch *.scss --recursive styles.css",
+    "sass": "node-sass --source-map-embed styles.scss styles.css",
+    "browser-sync": "browser-sync start --server"
   },
   "author": "Bjarni Guðmundsson",
   "license": "ISC",
   "dependencies": {
     "browser-sync": "^2.26.12",
-    "concurrently": "^5.3.0",
     "node-sass": "^4.14.1",
-    "stylelint": "^13.7.2"
+    "sass": "^1.27.0",
+    "stylelint-config-sass-guidelines": "^7.1.0"
+  },
+  "devDependencies": {
+    "concurrently": "^5.3.0",
+    "stylelint": "^13.7.2",
+    "stylelint-config-standard": "^20.0.0"
   }
 }
