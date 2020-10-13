@@ -1,4 +1,7 @@
 // Sækja config
+
+@import "./config.scss";
+
 // Allir stílar fyrir "global", þ.e.a.s. type selectorar, reset etc
 
 * {
@@ -15,14 +18,16 @@ main {
 body {
   font-size: 16px;
   font-family: 'Open Sans', helvetica, arial, sans-serif;
-  color: #222222;
+  color: $text-color;
+
+  a {
+    color: $text-color;
+  }
 }
-a {
-  color: #222222;
-}
+
 button {
-  background-color: #222222;
-  color: #eeeeee;
+  background-color: $button-background-color;
+  color: $almost-white;
   border: 1px solid #000000;
   border-radius: 5px;
   padding: 0.5rem;
@@ -30,16 +35,19 @@ button {
   transition:
     color 300ms ease-in-out,
     background-color 300ms ease-in-out ;
+
+  &:hover {
+    background-color: #eeeeee;
+    color: #222222;
+  }
+
+  &:active {
+    background-color: #222222;
+    color: #eeeeee;
+    border: 1px solid #000000;
+  }
 }
-button:hover {
-  background-color: #eeeeee;
-  color: #222222;
-}
-button:active {
-  background-color: #222222;
-  color: #eeeeee;
-  border: 1px solid #000000;
-}
+
 h1, h2, h3, h4 {
   font-family: 'Montaga', Georgia, serif;
 }
