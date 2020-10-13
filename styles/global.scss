@@ -1,13 +1,13 @@
 // Sækja config
 
-@import "./config.scss";
+@import './config';
 
 // Allir stílar fyrir "global", þ.e.a.s. type selectorar, reset etc
 
 * {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
 }
 
 main {
@@ -16,38 +16,41 @@ main {
 }
 
 body {
-  font-size: 16px;
-  font-family: 'Open Sans', helvetica, arial, sans-serif;
-  color: $text-color;
+  color: $almost-black;
+  font-family: $main-family;
+  font-size: $font-size;
 
   a {
-    color: $text-color;
+    color: $almost-black;
   }
 }
 
 button {
-  background-color: $button-background-color;
-  color: $almost-white;
-  border: 1px solid #000000;
+  background-color: $almost-black;
+  border: 1px solid $black;
   border-radius: 5px;
+  color: $almost-white;
   padding: 0.5rem;
-  word-break: initial;
   transition:
-    color 300ms ease-in-out,
-    background-color 300ms ease-in-out ;
+    color $main-transition,
+    background-color $main-transition;
+  word-break: initial;
 
   &:hover {
-    background-color: #eeeeee;
-    color: #222222;
+    background-color: $almost-white;
+    color: $almost-black;
   }
 
   &:active {
-    background-color: #222222;
-    color: #eeeeee;
-    border: 1px solid #000000;
+    background-color: $almost-black;
+    border: 1px solid $black;
+    color: $almost-white;
   }
 }
 
-h1, h2, h3, h4 {
-  font-family: 'Montaga', Georgia, serif;
+h1,
+h2,
+h3,
+h4 {
+  font-family: $header-family;
 }

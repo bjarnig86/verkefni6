@@ -1,6 +1,6 @@
 // Sækja config
 
-@import "./config.scss";
+@import './config';
 
 // Allir stílar fyrir bækur
 
@@ -10,68 +10,63 @@
   .col {
     margin-bottom: 2rem;
   }
+}
 
-  .book {
-    margin-right: 1rem;
-    margin-bottom: 2rem;
+.book {
+  @include flex-column;
+
+  background-color: $light-gray;
+  height: 100%;
+  margin-bottom: 2rem;
+  margin-right: 1rem;
+  min-width: 160px;
+  width: 100%;
+
+  h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  h4 {
+    font-size: 0.875rem;
+    font-weight: normal;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+  }
+
+  > .content {
+    @include flex-column;
+
+    border: 1px solid $dark-gray;
+    border-top: 0;
+    flex: 1;
+    justify-content: space-between;
+    padding: 0.5rem;
+  }
+
+  .image {
+    height: 200px;
+    overflow: hidden;
+  }
+
+  .image img {
+    height: 200px;
+    object-fit: cover;
+    transition: transform $main-transition;
     width: 100%;
-    height: 100%;
-    min-width: 160px;
+  }
 
+  .image img:hover {
+    transform: scale(1.3);
+  }
+
+  .buy {
+    align-items: center;
     display: flex;
-    flex-direction: column;
+    justify-content: space-between;
+  }
 
-    background-color: $books-background-color;
-
-    h3 {
-      margin-bottom: 0.5rem;
-      font-size: 1.5rem;
-    }
-
-    h4 {
-      margin-bottom: 1rem;
-      font-size: 0.875rem;
-      font-weight: normal;
-      text-transform: uppercase;
-    }
-
-    > .content {
-      padding: 0.5rem;
-      border: 1px solid $border-color;
-      border-top: 0;
-
-      flex: 1;
-
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-    }
-
-    .image {
-      height: 200px;
-      overflow: hidden;
-
-      img {
-        object-fit: cover;
-        width: 100%;
-        height: 200px;
-
-        transition: transform 300ms ease-in-out ;
-
-        &:hover {
-          transform: scale(1.3);
-        }
-      }
-    }
-
-    .buy {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-
-      .price {
-        margin-right: 0.5rem;
-      }
-    }
+  .buy.price {
+    margin-right: 0.5rem;
   }
 }

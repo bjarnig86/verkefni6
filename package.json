@@ -8,7 +8,7 @@
     "lint-scss": "stylelint styles.scss --syntax scss",
     "lint": "stylelint styles.scss ./**/*.scss",
     "dev": "concurrently npm:sass npm:browser-sync",
-    "sass-watch": "node-sass --source-map-embed --watch *.scss --recursive styles.css",
+    "sass-watch": "node-sass --source-map-embed --watch styles.scss --recursive styles.css",
     "sass": "node-sass --source-map-embed styles.scss styles.css -w",
     "browser-sync": "browser-sync --server --files \"*\""
   },

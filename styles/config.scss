@@ -3,23 +3,27 @@
 // grid, max-width á síðu, transitions,
 // liti, margin-bottom gildi sem eru sameiginleg
 
+// colors
+$almost-white: #eee;
+$almost-black: #222;
+$light-gray: #ccc;
+$dark-gray: #999;
+$black: #000;
 
-// header breytur
-$header-text-color: #eeeeee;
+// grid breytur
+$columns: 12;
+$max-width: 1400px;
 
-// books breytur
-$books-background-color: #cccccc;
-$border-color: #999999;
+// mixins
+@mixin flex-column {
+  display: flex;
+  flex-direction: column;
+}
 
-// events breytur
-$events-background-color: #cccccc;
+// fonts
+$main-family: 'Open Sans', helvetica, arial, sans-serif;
+$header-family: 'Montaga', georgia, serif;
+$font-size: 16px;
 
-// global breytur
-
-$text-color: #222222;
-$button-background-color: #222222;
-
-$almost-white: #eeeeee;
-$almost-black: #222222;
-$light-gray:  #cccccc;
-$dark-gray:  #999999;
+// transition
+$main-transition: 300ms ease-in-out;
